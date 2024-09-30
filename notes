@@ -1,0 +1,6 @@
+"express" package
+difference between node and npm
+package-lock.json is used by npm. Never tamper with it.
+git ignore
+use "nodemon" package to referesh the page/to track changes
+Note that there can be malicious packages on npm express
