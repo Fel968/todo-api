@@ -4,3 +4,6 @@ package-lock.json is used by npm. Never tamper with it.
 git ignore
 use "nodemon" package to referesh the page/to track changes
 Note that there can be malicious packages on npm express
+
+read on controllers and routes
+flow: model,controller,router,index.js
