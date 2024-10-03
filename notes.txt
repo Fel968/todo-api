@@ -1,0 +1,20 @@
+"express" package
+difference between node and npm
+package-lock.json is used by npm. Never tamper with it.
+git ignore
+use "nodemon" package to referesh the page/to track changes
+Note that there can be malicious packages on npm express
+
+read on controllers and routes
+flow: model,controller,router,index.js
+
+router uses controllers
+index.js uses routers
+so I think controllers are like...independent??
+
+there are other packages for different types of jobs. find different kind of web jobs that can be done with apis/databases
+express is only for taking and returning requests from users
+
+Day 4
+schema in mongodb = tables in sql
+schema contains models

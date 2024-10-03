@@ -13,7 +13,7 @@ todoRouter.get('/todos', getTodos);
 
 todoRouter.patch('/todos/:id', updateTodo);
 
-todoRouter.delete('todos/:id', deleteTodo);
+todoRouter.delete('/todos/:id', deleteTodo);
 
 // Export router
 export default todoRouter; //why default

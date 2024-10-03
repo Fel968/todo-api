@@ -2,17 +2,28 @@
 // to use import, put "type: module" in json package
 
 import express from 'express';
+import mongoose from 'mongoose';
 import todoRouter from './routes/todo_routes.js';
+import userRouter from './routes/user_routes.js';
+
+// connect to database using mongoose package
+await mongoose.connect(process.env.MONGO_URI); 
 
 //create an express app
 const app = express();
 
+// use middlewares. read on middleware. middleware should always come before route
+app.use(express.json());
+
 // use router
+    // this method can cause a bug
+         // app.use([todoRouter, userRouter]);
 app.use(todoRouter);
+app.use(userRouter);
 
 // Define routes
-// get,post,delete: read on when to use
-// app.get('/hello'); specify what should happen with a function
+     // get,post,delete: read on when to use
+        // app.get('/hello'); specify what should happen with a function
 app.get('/hello', (req, res, next) => {
     console.log(req.headers);
     res.json('You visited the hello endpoint!'); //res.json should be done only once
