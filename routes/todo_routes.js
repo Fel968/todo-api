@@ -2,12 +2,14 @@
 // why {Router}
 import { Router } from "express";
 import { addTodo, deleteTodo, getTodos, updateTodo } from "../controllers/todo._controllers.js";
+import { localUpload, remoteUpload } from "../middlewares/upload.js";
 
 // create a router
 const todoRouter = Router();
 
 // Define routes
-todoRouter.post('/todos', addTodo);
+// middlewarefor upload should be done on the route that uses the upload functionality
+todoRouter.post('/todos', remoteUpload.single('icon'), addTodo);
 
 todoRouter.get('/todos', getTodos);
 

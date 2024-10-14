@@ -5,6 +5,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import todoRouter from './routes/todo_routes.js';
 import userRouter from './routes/user_routes.js';
+import cors from 'cors'
 
 // connect to database using mongoose package
 await mongoose.connect(process.env.MONGO_URI); 
@@ -14,6 +15,9 @@ const app = express();
 
 // use middlewares. read on middleware. middleware should always come before route
 app.use(express.json());
+
+// use cors
+app.use(cors())
 
 // use router
     // this method can cause a bug

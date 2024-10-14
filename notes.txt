@@ -18,3 +18,8 @@ express is only for taking and returning requests from users
 Day 4
 schema in mongodb = tables in sql
 schema contains models
+
+what's the difference between req.body and req.param
+
+Week 6
+Multer: a file storage package
