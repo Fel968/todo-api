@@ -11,6 +11,7 @@ export const addTodo = async (req, res, next) => {
 
     // 2. write todo to database. we're using a cloud-based database. Local database will overwhelm your machine
     try {
+        console.log(req.file);
         const { error, value } = addTodoValidator.validate({
             ...req.body, //spread operator
             icon: req.file?.filename
@@ -32,8 +33,10 @@ export const addTodo = async (req, res, next) => {
 export const getTodos = async (req, res, next) => {
 
     try {
+        // filter todos for search by keywords
+        const {filter="{}", limit = 10, skip = 0} = req.query;
         // fetch todos from database
-        const todos = await TodoModel.find();
+        const todos = await TodoModel.find(JSON.parse(filter)).limit(limit).skip(skip);
 
         // return response
         res.status(200).json(todos);
@@ -50,3 +53,4 @@ export const updateTodo = (req, res, next) => {
 export const deleteTodo = (req, res, next) => {
     res.json('Todo deleted')
 }
+

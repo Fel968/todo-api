@@ -21,5 +21,12 @@ schema contains models
 
 what's the difference between req.body and req.param
 
-Week 6
+Week 6, Day 1
 Multer: a file storage package
+
+Day 2
+File storage path
+string interpolation
+How to get file path from storage location:
+searching/sorting= mongodb regex (there are other search functionalities, aside this, depending on the type of search to be done). stringify
+nested search
